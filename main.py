@@ -102,6 +102,22 @@ while(opcao_init != 100):
         os.system("cls")
         print("_________________________________________\n\nBem vindo ao Reino Eirantel! Um reino já visto como a nação perfeita, onde a pobreza não existia e a segurança do povo era prioridade. Hoje em dia, infelizmente, esse título não condiz mais com a realidade, pois criaturas do abismo assolaram essas terras com triteza.")
         print("Sua missão, é derrotar todas as criaturas invassoras e seu lider, conhecido e venerado como 'A Tormenta'.")
+        print("Iniciando batalha contra primeiro inimigo:")
+        print(nome_esqArc, "Vida: ", hp_esqArc, "Atk: ", atk_esqArc)
+        hp_inimigo_atual = hp_esqArc
+        while(hp_inimigo_atual > 0):
+            opcao_atk = 0
+            print("Deseja atacar? [1] - Sim")
+            opcao_atk = int(input("Opção: "))
+            while opcao_atk != 1:
+                print("Deseja atacar? [1] - Sim")
+                opcao_atk = int(input("Opção: "))
+                if(opcao_atk == 1):
+                    hp_esqArc -= atk_p
+            if(hp_esqArc > 0):
+                print("O inimigo te atacou! Ele causou: ", atk_esqArc, " de dano!")
+                hp_p -= atk_esqArc
+                print("Vida atual: ", hp_p)
     elif opcao_init == 2:
         os.system("cls")
 
