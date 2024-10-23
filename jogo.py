@@ -44,6 +44,14 @@ def showInfoJogador():
     print(f"{nome_p} | Level: {nivel_p} | Xp: {xp_p}")
     print(f"Atributos:\nHP: {hp_p} | ATK: {atk_p} | Mana: {mana_p}")
     print(f"Infos adicionais:\nClasse: {nome_classe} | Arma: {nome_arma}")
+
+def iniciaHistoria():
+    os.system("cls")
+    print("_________________________________________\n\nBem vindo ao Reino Eirantel! Um reino já visto como a nação perfeita, onde a pobreza não existia e a segurança do povo era prioridade. Hoje em dia, infelizmente, esse título não condiz mais com a realidade, pois criaturas do abismo assolaram essas terras com triteza.")
+    print("Sua missão, é derrotar todas as criaturas invassoras e seu lider, conhecido e venerado como 'A Tormenta'.")
+
+def opcoesBatalha():
+    print()
 # Atributos do jogador
 nome_p = "" # nome
 nivel_p = 1
@@ -79,6 +87,7 @@ opcoes_armas_guerreiro = ['Espadão', 'Martelo', 'Katana']
 opcoes_armas_arqueiro = ['Lança', 'Arco', 'Besta']
 opcoes_armas_mago = ['Cajado', 'Varinha', 'Talismã']
 opcoes_config = ['Info Jogador', 'Guia de Jogo']
+opcoes_batalha = ['Atacar', 'Habilidades', 'Mochila', 'Fugir']
 while opcao_init != 0:
     showInitOption()
     print('[0] - Sair')
@@ -88,6 +97,7 @@ while opcao_init != 0:
             print("Não existe jogo salvo")
         else:
             print("À fazer")
+    # Iniciar jogo e história
     elif opcao_init == 2:
         print("|====================================|")
         print("|Bem vindo(a) à Dungeons and Dragons!|")
@@ -162,6 +172,20 @@ while opcao_init != 0:
                 hp_p = hp_p + 25
         else:
             print(f"Essa opção de classe ({opcao_classe}) não existe")
+        iniciaHistoria()
+        print("Parece que um inimigo apareceu! A batalha se inicia!")
+        print(nome_esqArc, "Vida: ", hp_esqArc, "Atk: ", atk_esqArc)
+        hp_inimigo_atual = hp_esqArc
+        while hp_inimigo_atual > 0 and hp_p > 0:
+            option_batalha = 0
+            print("Deseja atacar? [1] - Sim")
+            opcao_atk = int(input("Opção: "))
+            if(opcao_atk == 1):
+                hp_esqArc -= atk_p
+            if(hp_esqArc > 0):
+                print("O inimigo te atacou! Ele causou: ", atk_esqArc, " de dano!")
+                hp_p -= atk_esqArc
+                print("Vida atual: ", hp_p)
     elif opcao_init == 3:
         opcao_config = 100
         while opcao_config != 0:
