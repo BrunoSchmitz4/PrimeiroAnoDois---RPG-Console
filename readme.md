@@ -9,4 +9,5 @@
  - Desenvolvido no Visual Studio Code
  - Data de criação 2024/02
 
-# Embarque na aventura de Dungeons and Dragon, incorporada em um jogo simples de terminal, onde 
+# Embarque na aventura de Dungeons and Dragon, incorporada em um jogo simples de terminal, onde você,
+# um aventureiro, deve resgatar um reino das garras do Abismo.
